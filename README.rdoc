@@ -1,11 +1,10 @@
-== README
+<h1>Market Place API</h1>
+<br>
+<h2>This is a development/testing API as a sample marketplace</h2>
+<br>
+Spec Information:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Ruby version 2.2.1
 
 * System dependencies
 
