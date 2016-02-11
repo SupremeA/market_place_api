@@ -1,4 +1,3 @@
-
 require 'api_constraints'
 
 MarketPlaceApi::Application.routes.draw do
