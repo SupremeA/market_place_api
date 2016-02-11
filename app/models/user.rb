@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :auth_token, uniqueness: true
-  validates :email, uniqueness: { case_sensitive: false }
 
 before_create :generate_authentication_token!
 
