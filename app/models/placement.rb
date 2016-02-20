@@ -5,7 +5,7 @@ class Placement < ActiveRecord::Base
   after_create :decrement_product_quantity!
 
   def decrement_product_quantity!
-    self.product.decremnt!(:quantity, quantity)
+    self.product.decrement!(:quantity, quantity)
   end
 
 end
