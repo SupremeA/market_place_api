@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :placement do
-    order nil
-    product 
+    order 
+    product
     quantity 1
   end
 end
