@@ -4,10 +4,7 @@ class Api::V1::OrdersController < ApplicationController
 
   def index
     orders = current_user.orders.page(params[:page]).per(params[:per_page])
-    render json: orders, meta: { pagination:
-                                  { per_page: params[:per_page],
-                                    total_pages: orders.total_pages,
-                                    total_objects: orders.total_count } }
+    render json: orders, meta: pagination(orders, params[:per_page])
   end
 
   def show
@@ -20,7 +17,7 @@ class Api::V1::OrdersController < ApplicationController
 
     if order.save
       order.reload
-      OrderMailer.send_confirmation(order).deliver
+      OrderMailer.delay.send_confirmation(order)
       render json: order, status: 201, location: [:api, current_user, order]
     else
       render json: { errors: order.errors }, status: 422
